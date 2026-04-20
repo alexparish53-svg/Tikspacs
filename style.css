@@ -1,0 +1,155 @@
+/* --- Grundutseende --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #fff5f8; /* Ljusrosa bakgrund på hela sajten */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- Fade-in animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInMove 1s ease-out forwards;
+}
+
+@keyframes fadeInMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- HEADER (Rosa för båda sidor) --- */
+header.main-header, header.map-header {
+    background: linear-gradient(to right, #FF69B4, #DB7093);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 { font-size: 2.5em; margin-bottom: 10px; }
+
+/* --- Startsida Main & Knappar --- */
+main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Knappen är nu också rosa för att matcha temat */
+.nice-button {
+    background: linear-gradient(to right, #FF69B4, #DB7093);
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(219, 112, 147, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nice-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(219, 112, 147, 0.5);
+}
+
+/* --- KART-LAYOUT (Tredelad rosa) --- */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    padding: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+#legend {
+    width: 250px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(219, 112, 147, 0.15);
+    border: 1px solid #ffdae9;
+    text-align: left;
+}
+
+#legend h3 { color: #DB7093; margin-top: 0; border-bottom: 2px solid #fff5f8; padding-bottom: 10px;}
+#legend .item { display: flex; align-items: center; gap: 15px; margin: 20px 0; }
+#legend img { width: 30px; height: auto; }
+
+#map {
+    height: 650px;
+    flex-grow: 1;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 3px solid white;
+}
+
+#side-info {
+    width: 280px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(219, 112, 147, 0.15);
+    border: 1px solid #ffdae9;
+    text-align: center;
+}
+
+#side-info img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+
+/* --- Footer & Sponsorer (Rosa list) --- */
+footer {
+    background-color: #fff;
+    padding: 60px 20px;
+    margin-top: 50px;
+    text-align: center;
+    border-top: 4px solid #FF69B4; /* Rosa linje istället för grön */
+}
+
+.ad-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.ad img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.4s;
+}
+
+.ad img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+.back-link {
+    display: inline-block;
+    margin: 20px;
+    color: #DB7093;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright { margin-top: 40px; color: #999; font-size: 0.8em; }
+
+@media (max-width: 1000px) {
+    .ad-grid { grid-template-columns: repeat(3, 1fr); }
+    .map-container { flex-direction: column; align-items: center; }
+}
